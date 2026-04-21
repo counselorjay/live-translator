@@ -52,26 +52,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 20vh;
-    border-bottom: 2px solid #333;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    min-height: 10vh;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
   }
   #english-text { 
-    font-size: 2.2vw; 
-    color: #aaaaaa; 
+    font-size: 1.2vw; 
+    color: #888888; 
     text-align: center; 
-    min-height: 3vw; 
+    min-height: 2vw; 
     font-weight: 400;
   }
   #translated-text { 
-    font-size: 5vw; 
-    font-weight: 700; 
+    font-size: 1.8vw; 
+    font-weight: 600; 
     text-align: center; 
     color: #4facfe; 
-    min-height: 7vw; 
+    min-height: 2.5vw; 
     line-height: 1.2;
-    margin-top: 10px;
+    margin-top: 5px;
   }
   #history-container {
     width: 100%;
@@ -90,13 +90,13 @@
     opacity: 0.9;
   }
   .history-en { 
-    font-size: 1.5vw; 
-    color: #888; 
+    font-size: 2vw; 
+    color: #aaaaaa; 
   }
   .history-tl { 
-    font-size: 2.8vw; 
+    font-size: 4vw; 
     color: #4facfe; 
-    font-weight: 600; 
+    font-weight: 700; 
   }
   button { 
     padding: 15px 35px; 
@@ -206,7 +206,7 @@
     if (!text.trim()) return;
     const translated = await translateText(text);
     historyLines.push({ en: text, tl: translated });
-    if (historyLines.length > 3) historyLines.shift(); // Keep last 3 lines
+    if (historyLines.length > 4) historyLines.shift(); // Keep last 4 lines
     renderHistory();
   }
 
