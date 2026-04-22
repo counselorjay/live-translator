@@ -141,6 +141,7 @@
         <option value="ko">Korean (한국어)</option>
         <option value="zh-CN">Chinese Simplified (简体中文)</option>
         <option value="zh-TW">Chinese Traditional (繁體中文)</option>
+        <option value="vi">Vietnamese (Tiếng Việt)</option>
       </select>
       <button id="start-btn">Start Microphone</button>
     </div>
@@ -215,7 +216,7 @@
     historyLines = [];
     renderHistory();
     if (!recognizing) {
-      const waitingText = langSelect.value === 'ko' ? '대기 중...' : '等待中...';
+      const waitingText = langSelect.value === 'ko' ? '대기 중...' : langSelect.value === 'vi' ? 'Đang chờ...' : '等待中...';
       translatedDiv.innerText = waitingText;
     }
   });
@@ -240,7 +241,7 @@
         translatedDiv.innerText = translated;
       }, 400); // 400ms delay for live preview
     } else {
-      const waitingText = langSelect.value === 'ko' ? '대기 중...' : '等待中...';
+      const waitingText = langSelect.value === 'ko' ? '대기 중...' : langSelect.value === 'vi' ? 'Đang chờ...' : '等待中...';
       translatedDiv.innerText = recognizing ? "" : waitingText;
     }
   };
@@ -260,7 +261,7 @@
       startBtn.innerText = "Start Microphone";
       startBtn.classList.remove("recording");
       englishDiv.innerText = "Waiting for speech...";
-      const waitingText = langSelect.value === 'ko' ? '대기 중...' : '等待中...';
+      const waitingText = langSelect.value === 'ko' ? '대기 중...' : langSelect.value === 'vi' ? 'Đang chờ...' : '等待中...';
       translatedDiv.innerText = waitingText;
     } else {
       recognition.start();
